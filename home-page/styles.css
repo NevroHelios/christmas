@@ -1,0 +1,144 @@
+/* Basic styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Change as needed */
+  }
+  
+  /* Hamburger icon styling */
+  .dot {
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .open .dot:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .open .dot:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open .dot:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  
+  /* Menu styling */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hide menu off-screen by default */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .menu ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Other styles for your webpage content */
+  /* ... */
+  
+ 
+  
+  .hero {
+    position: relative;
+    height: 500px; /* Adjust as needed */
+    overflow: hidden;
+  }
+  
+  .hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .parallax-section {
+    position: relative;
+    height: 800px; /* Adjust as needed */
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  .parallax-bg img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .parallax-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Snowflake style */
+  .snowflake {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 1;
+  }
+  
+  /* Snowfall animation */
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-5px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(calc(100vh + 5px)) rotate(360deg);
+      opacity: 0.3;
+    }
+  }
+
+
+
+  .social-media {
+    /* Styles for social media sharing buttons */
+    /* Add your styles */
+  }
+  
+  .comment-section {
+    /* Styles for commenting section */
+    /* Add your styles */
+  }
+  
+  .footer-links {
+    /* Styles for footer navigation links */
+    /* Add your styles */
+  }
+  

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Celebration</title>
+  <link rel="stylesheet" href="morphy.css">
+  <style>
+    /* morphy.css */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.pinimg.com/736x/85/27/f1/8527f12e83003488efc5de0ac1d7ab09.jpg');
+      background-size: cover;
+      overflow: hidden;
+    }
+    
+    .home {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      animation: fluidTransition 1s ease forwards;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    
+    @keyframes fluidTransition {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    #explore-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #88ce02;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    #explore-btn:hover {
+      background-color: #669900;
+    }
+    .exit-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #a2d75c; /* Change background color as needed */
+      z-index: 9999;
+      animation: exitAnimation 1.5s ease both;
+    }
+    
+    @keyframes exitAnimation {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="home">
+      <h1>Welcome to Our Christmas Celebration!</h1>
+      <p>Join us in spreading the joy and warmth of the holiday season.</p>
+      <button id="explore-btn">Explore</button>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("explore-btn").addEventListener("click", function () {
+        // Add exit transition overlay
+        const exitTransition = document.createElement("div");
+        exitTransition.classList.add("exit-transition");
+        document.body.appendChild(exitTransition);
+
+        // Redirect to the desired page after the transition animation
+        setTimeout(function () {
+          window.location.href = './home-page/index.html'; // Replace 'index.html' with the target page
+        }, 1000); // Adjust timing to match the animation duration
+      });
+    });
+  </script>
+</body>
+</html>
