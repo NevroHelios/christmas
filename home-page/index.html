@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Celebration</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Add Bootstrap CSS -->
+
 </head>
 <body>
     
@@ -49,17 +52,37 @@
   </section>
 
   <!-- Parallax section - Countdown Calendar Workshop -->
-  <section id="countdown" class="parallax-section">
+  <section id="interactive" class="parallax-section">
     <div class="parallax-bg">
-      <!-- Add DIY calendar templates image or gif here -->
-      <img src="https://media2.giphy.com/media/3o72FhIuVWddxQHftS/giphy.gif?cid=ecf05e4720wotojc2s1ljxcg5yeafiut5s12y2kn4nvpwo25&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="DIY Calendar Templates" />
+      <!-- Add interactive games, puzzles, or quizzes gif here -->
+      <img src="https://sweezy-cursors.com/wp-content/uploads/cursor/christmas-santa-claus-gift-animated/christmas-santa-claus-gift-animated-custom-cursor.gif" alt="Interactive Games" />
+      <div id="snowfall"></div> <!-- Snowfall effect -->
     </div>
     <div class="parallax-content">
-      <h2>Countdown Calendar Workshop</h2>
-      <p>Scroll to learn how to create your own countdown calendar!</p>
-      <!-- Add steps and animations as needed -->
+      <h2>Countdown</h2>
+      <p>Get ready to engage in the mood of festivity!</p>
+      <!-- Countdown Timer -->
+      <div id="countdown-clock" class="d-flex justify-content-center">
+        <div class="time d-flex flex-column align-items-center">
+          <span id="days" class="display-4"></span>
+          <span class="label">Days</span>
+        </div>
+        <div class="time d-flex flex-column align-items-center">
+          <span id="hours" class="display-4"></span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="time d-flex flex-column align-items-center">
+          <span id="minutes" class="display-4"></span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="time d-flex flex-column align-items-center">
+          <span id="seconds" class="display-4"></span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
     </div>
   </section>
+  
 
   <!-- Parallax section - Interactive Elements -->
   <section id="interactive" class="parallax-section">
