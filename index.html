@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Celebration</title>
-  <link rel="stylesheet" href="morphy.css">
   <style>
-    /* morphy.css */
+    /* Existing styles */
     body {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
@@ -16,7 +15,7 @@
       height: 100vh;
       margin: 0;
       padding: 0;
-      background-image: url('https://i.pinimg.com/736x/85/27/f1/8527f12e83003488efc5de0ac1d7ab09.jpg');
+      background-image: url('https://r4.wallpaperflare.com/wallpaper/703/810/499/christmas-moon-christmas-sleigh-santa-wallpaper-92410220fd060ecb5ac8b265a0f809e2.jpg');
       background-size: cover;
       overflow: hidden;
     }
@@ -28,20 +27,8 @@
       background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
       border-radius: 10px;
-      animation: fluidTransition 1s ease forwards;
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    
-    @keyframes fluidTransition {
-      0% {
-        opacity: 0;
-        transform: translateY(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      position: relative; /* Added */
+      z-index: 1; /* Added */
     }
     
     #explore-btn {
@@ -59,23 +46,30 @@
     #explore-btn:hover {
       background-color: #669900;
     }
-    .exit-transition {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #a2d75c; /* Change background color as needed */
-      z-index: 9999;
-      animation: exitAnimation 1.5s ease both;
+    
+    /* Snowball styles */
+    .snowball {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+      pointer-events: none;
+      animation: snowball-animation 2s ease-out infinite;
+      z-index: 0; /* Updated */
     }
     
-    @keyframes exitAnimation {
-      from {
+    @keyframes snowball-animation {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0);
+      }
+      50% {
         opacity: 1;
       }
-      to {
+      100% {
         opacity: 0;
+        transform: translate(var(--x), var(--y));
       }
     }
   </style>
@@ -88,19 +82,59 @@
       <button id="explore-btn">Explore</button>
     </section>
   </main>
+  
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("explore-btn").addEventListener("click", function () {
-        // Add exit transition overlay
-        const exitTransition = document.createElement("div");
-        exitTransition.classList.add("exit-transition");
-        document.body.appendChild(exitTransition);
+      document.getElementById("explore-btn").addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents snowballs when button is clicked
+        window.location.href = 'home-page/index.html'
 
-        // Redirect to the desired page after the transition animation
-        setTimeout(function () {
-          window.location.href = './home-page/index.html'; // Replace 'index.html' with the target page
-        }, 1000); // Adjust timing to match the animation duration
+        const snowball = document.createElement('div');
+        snowball.classList.add('snowball');
+        const size = Math.random() * 20 + 10;
+        const xPos = event.clientX - size / 2;
+        const yPos = event.clientY - size / 2;
+        const randomX = Math.random() * 200 - 100;
+        const randomY = Math.random() * 200 - 100;
+  
+        snowball.style.width = size + 'px';
+        snowball.style.height = size + 'px';
+        snowball.style.top = yPos + 'px';
+        snowball.style.left = xPos + 'px';
+        snowball.style.setProperty('--x', randomX + 'px');
+        snowball.style.setProperty('--y', randomY + 'px');
+  
+        document.body.appendChild(snowball);
+  
+        setTimeout(() => {
+          snowball.remove();
+        }, 2000);
       });
+      
+      document.addEventListener('mousemove', createSnowballOnMove);
+      
+      function createSnowballOnMove(event) {
+        const snowball = document.createElement('div');
+        snowball.classList.add('snowball');
+        const size = Math.random() * 20 + 10;
+        const xPos = event.clientX - size / 2;
+        const yPos = event.clientY - size / 2;
+        const randomX = Math.random() * 200 - 100;
+        const randomY = Math.random() * 200 - 100;
+  
+        snowball.style.width = size + 'px';
+        snowball.style.height = size + 'px';
+        snowball.style.top = yPos + 'px';
+        snowball.style.left = xPos + 'px';
+        snowball.style.setProperty('--x', randomX + 'px');
+        snowball.style.setProperty('--y', randomY + 'px');
+  
+        document.body.appendChild(snowball);
+  
+        setTimeout(() => {
+          snowball.remove();
+        }, 2000);
+      }
     });
   </script>
 </body>
