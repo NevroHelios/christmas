@@ -15,36 +15,59 @@
       height: 100vh;
       margin: 0;
       padding: 0;
-      background-image: url('https://r4.wallpaperflare.com/wallpaper/703/810/499/christmas-moon-christmas-sleigh-santa-wallpaper-92410220fd060ecb5ac8b265a0f809e2.jpg');
+      background-image: url('https://r4.wallpaperflare.com/wallpaper/92/49/83/santa-claus-reindeer-sleigh-flying-wallpaper-98d16f26ad5dbbe6f8112fe8ce974871.jpg');
       background-size: cover;
       overflow: hidden;
+    }
+    
+    .buttons-container {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    #about-btn {
+      background-image: linear-gradient(to bottom right, #B31217, #F03813);
+      color: #FFF;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    #explore-btn {
+      background-image: linear-gradient(to bottom right, #0B486B, #0E4C67);
+      color: #FFF;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
     
     .home {
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(27, 54, 150, 0.4);
       padding: 20px;
       border-radius: 10px;
       position: relative; /* Added */
       z-index: 1; /* Added */
-    }
-    
-    #explore-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #88ce02;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    #explore-btn:hover {
-      background-color: #669900;
     }
     
     /* Snowball styles */
@@ -75,11 +98,14 @@
   </style>
 </head>
 <body>
+  <div class="buttons-container">
+    <button id="about-btn" class="button">About</button>
+    <button id="explore-btn" class="button">Explore</button>
+  </div>
   <main>
     <section class="home">
       <h1>Welcome to Our Christmas Celebration!</h1>
       <p>Join us in spreading the joy and warmth of the holiday season.</p>
-      <button id="explore-btn">Explore</button>
     </section>
   </main>
   
