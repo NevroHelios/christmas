@@ -1,0 +1,16 @@
+  /* Countdown Timer */
+  .time {
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  .label {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .display-4 {
+    font-size: 8rem; /* Larger font size for countdown numbers */
+    color: white; /* Reddish color for numbers */
+    font-weight: bold; /* Make numbers bold */
+  }

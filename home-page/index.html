@@ -54,6 +54,7 @@
         }
     </style>
     <link rel="stylesheet" href="snowfall.css">
+    <link rel="stylesheet" href="countdown.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
        $$(window).scroll(function() {
@@ -71,12 +72,45 @@
   
   
    <div class="parallax parallax1 cnv" data-speed="'0.8">Section 1</div>
-   <div class="parallax parallax2">Section 2</div>
-   <div class="parallax parallax3">Section 3</div>
+   <div class="parallax parallax2"><a href="./GTREETINGCARDS/index.html" target="_blank">CUSTOMISE YOUR GREETING CARDS AND SHARE.</a></div>
+   <div class="parallax parallax3">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <section id="interactive" class="parallax-section">
+        <div class="parallax-bg">
+          <!-- Add interactive games, puzzles, or quizzes gif here -->
+          <img src="https://sweezy-cursors.com/wp-content/uploads/cursor/christmas-santa-claus-gift-animated/christmas-santa-claus-gift-animated-custom-cursor.gif" alt="Interactive Games" />
+          <div class="snowflake"></div> <!-- Snowfall effect -->
+        </div>
+        <div class="parallax-content">
+          <h2 style="text-align:center">Countdown</h2>
+          <p>Get ready to engage in the mood of festivity!</p>
+          <!-- Countdown Timer -->
+          <div id="countdown-clock" class="d-flex justify-content-center">
+            <div class="time d-flex flex-column align-items-center">
+              <span id="days" class="display-4"></span>
+              <span class="label">Days</span>
+            </div>
+            <div class="time d-flex flex-column align-items-center">
+              <span id="hours" class="display-4"></span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="time d-flex flex-column align-items-center">
+              <span id="minutes" class="display-4"></span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="time d-flex flex-column align-items-center">
+              <span id="seconds" class="display-4"></span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </section>
+   </div>
    <div class="parallax parallax4">Section 4</div>
    <div class="parallax parallax5">Section 5</div>
   
   <script src="snowfall.js"></script>
+  <script src="countdown.js"></script>
 </body>
 
 </html>
