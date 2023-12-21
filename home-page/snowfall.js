@@ -1,29 +1,42 @@
-// Function to generate a random number within a range
-function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
+
+const cnv = document.getElementsByClass("cnv");
+const ctx = cnv.getContext("2d");
+
+cnv.width = (window.innerWidth * 75) / 100;
+cnv.width = (window.innerHeight * 75) / 100;
+
+class Drop {
+  constructor() {
+    this.x = Math.random() * cnv.width;
+    this.y = Math.random() * cnv.height;
+    this.r = Math.random() * 4.5;
+    this.v = Math.random() * 1.5;
+  }
+
+  make() {
+    // Set snowball color to white
+    ctx.fillStyle = "#ffffff"; // 
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+
+    this.y += this.v * 0.5;
+    if (this.y > cnv.height) {
+      this.x = Math.random() * cnv.width;
+      this.y = 0;
+    }
+  }
 }
 
-// Function to create snowballs falling animation
-function createSnowball() {
-  const snowball = document.createElement('div');
-  snowball.classList.add('snowball');
-  snowball.style.left = `${getRandom(0, window.innerWidth)}px`;
-  document.getElementById('snowfall-container').appendChild(snowball);
-
-  // Animate the snowball falling and decreasing opacity
-  const animationDuration = getRandom(4, 8); // Adjust falling speed
-  snowball.style.animation = `fall ${animationDuration}s linear forwards, fade 1s ${animationDuration - 1}s forwards`;
-
-  // Remove snowball element when it reaches the bottom
-  snowball.addEventListener('animationend', () => {
-    snowball.remove();
+let drops = [];
+for (let i = 0; i < 100; i++) drops.push(new Drop());
+function animation() {
+  ctx.clearRect(0, 0, cnv.width, cnv.height);
+  drops.forEach((drop) => {
+    drop.make();
   });
+  requestAnimationFrame(animation);
 }
-
-// Create multiple snowballs falling at random intervals
-function generateSnowballs() {
-  setInterval(createSnowball, 1000); // Adjust snowfall frequency
-}
-
-// Run the function when the content is loaded
-window.addEventListener('load', generateSnowballs);
+animation();
