@@ -125,29 +125,31 @@ body {
   text-align: center;
   font-style: italic; /* Italics for paragraphs */
 }
-  
-  /* Snowflake style */
-  .snowflake {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 1;
+
+
+/* Additional styles for snowball animation */
+.snowball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: -30px; /* Start position above the viewport */
+  opacity: 0.8; /* Initial opacity */
+}
+
+@keyframes fall {
+  to {
+    top: 100vh; /* End position at the bottom of the viewport */
   }
-  
-  /* Snowfall animation */
-  @keyframes snowfall {
-    0% {
-      transform: translateY(-5px) rotate(0deg);
-    }
-    100% {
-      transform: translateY(calc(100vh + 5px)) rotate(360deg);
-      opacity: 0.3;
-    }
+}
+
+@keyframes fade {
+  to {
+    opacity: 0; /* Decrease opacity to 0 as the snowball falls */
   }
+}
+
 
 
 
@@ -167,46 +169,6 @@ body {
   color: #a71d1d; /* Reddish color for numbers */
   font-weight: bold; /* Make numbers bold */
 }
-
-/* Snowfall Effect */
-#snowfall {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-#snowfall::after {
-  content: "";
-  background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#snowfall::before, #snowfall::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: repeat;
-  background-position: 0 0, 50px 50px;
-  background-size: 100px 100px;
-  animation: snowfall 10s linear infinite;
-}
-
-@keyframes snowfall {
-  0% {background-position: 0 0, 50px 50px;}
-  100% {background-position: 100px 100px, 150px 150px;}
-}
-
 
   .social-media {
     /* Styles for social media sharing buttons */
