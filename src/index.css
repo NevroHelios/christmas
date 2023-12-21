@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.image {
+  position: relative;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.content span.img-txt {
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+}
+
+ /* Countdown Timer */
+ .time {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.label {
+  font-size: 1.5rem;
+  color: #a71d1d;
+}
+
+.display-4 {
+  font-size: 4rem; /* Larger font size for countdown numbers */
+  color: #a71d1d; /* Reddish color for numbers */
+  font-weight: bold; /* Make numbers bold */
+}
+
+  
+.parallax-section {
+  position: relative;
+  height: 800px; /* Adjust as needed */
+  overflow: hidden;
+  color: #a71d1d;
+}
+
+.parallax-bg img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header and section styles */
+.parallax-section {
+position: relative;
+height: 800px; /* Adjust as needed */
+overflow: hidden;
+color: #a71d1d; /* Reddish color for section content */
+}
+
+.parallax-content h2 {
+font-size: 3rem; /* Larger font size for headers */
+text-align: center;
+margin-bottom: 20px;
+text-transform: uppercase; /* Uppercase text */
+letter-spacing: 2px; /* Increased letter spacing */
+}
+
+.parallax-content p {
+font-size: 1.2rem; /* Slightly larger font size for paragraphs */
+text-align: center;
+font-style: italic; /* Italics for paragraphs */
+}
