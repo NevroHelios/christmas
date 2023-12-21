@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Celebration</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <!-- Add Bootstrap CSS -->
 
@@ -39,17 +40,36 @@
       <!-- Or <video> tag for video -->
     </div>
   <!-- Parallax section - Customizable Greetings and Cards -->
+  
   <section id="greetings" class="parallax-section">
     <div class="parallax-bg">
       <!-- Add customizable card templates image or gif here -->
-      <img src="./chris.gif" alt="Customizable Card Templates" />
+      <img src="https://images.unsplash.com/photo-1451772741724-d20990422508?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Customizable Card Templates" class="img-fluid" />
     </div>
-    <div class="parallax-content">
+    <div class="parallax-content text-center">
       <h2>Customizable Greetings and Cards</h2>
-      <p>Scroll to discover and create your own festive cards!</p>
-      <a href="#card-customization-tool" class="create-card-btn">Create Your Own Card</a>
+      <p class="mb-4">Scroll to discover and create your own festive cards!</p>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form id="card-customization-form">
+              <div class="form-group">
+                <label for="recipient-name">Recipient's Name:</label>
+                <input type="text" class="form-control" id="recipient-name" name="recipient-name" placeholder="Enter recipient's name" required>
+              </div>
+              <div class="form-group">
+                <label for="greeting-message">Greeting Message:</label>
+                <textarea class="form-control" id="greeting-message" name="greeting-message" placeholder="Write your greeting message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Create Your Card</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  
+  
 
   <!-- Parallax section - Countdown Calendar Workshop -->
   <section id="interactive" class="parallax-section">
@@ -88,7 +108,7 @@
   <section id="interactive" class="parallax-section">
     <div class="parallax-bg">
       <!-- Add interactive games, puzzles, or quizzes gif here -->
-      <img src="./chris.gif" alt="Interactive Games" />
+      <img src="./chris.jpg" alt="Interactive Games" />
       <!-- Snowball effect -->
       <div id="snowfall-container"></div>
       <!-- Add more snowballs as needed -->
