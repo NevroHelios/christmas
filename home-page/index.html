@@ -72,8 +72,8 @@
           url("christmas-5.jpg");
       }
     </style>
-    <link rel="stylesheet" href="fireworks.css"/>
     <link rel="stylesheet" href="snowfall.css" />
+    <link rel="stylesheet" href="fireworks.css"/>
     <link rel="stylesheet" href="countdown.css" />
     <link rel="stylesheet" href="FlyingSanta.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -91,12 +91,17 @@
     </script>
   </head>
   <body>
+    <div id="fireworks-container"></div>
+    
     <div class="snow">
-      <div class="parallax parallax1">Section 1</div>
+      <div class="parallax parallax1">   <!-- DONT WRITE ANYTING HERE -->
+        <canvas id="canvas2"></canvas>
+      </div>
       <div class="parallax parallax2">
         <a href="./greetingcards/index.html" style="z-index:2; pointer-events:auto">CUSTOMISE YOUR GREETING CARDS AND SHARE.</a>
       </div>
       <div class="parallax parallax3">
+        <canvas id="canvas"></canvas>
         <link
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           rel="stylesheet"
@@ -143,11 +148,14 @@
           alt="Santa Be Watchin"
         />
       </div>
-      <div class="parallax parallax5">Section 5</div>
+      <div class="parallax parallax5" >SECTION5
+      </div>
     </div>
+    
 
     <script src="snowfall.js"></script>
     <script src="countdown.js"></script>
     <script src="fireworks.js"></script>
+    <script src="fireworks2.js"></script>
   </body>
 </html>

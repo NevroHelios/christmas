@@ -1,32 +1,25 @@
-const fireDiv = document.querySelector('.fireworksDiv');
-const fireworks = new Fireworks(fireDiv,{
-  delay:{min:10, max:15},
-  trace: 5,
-  speed:0.5,
-  particles: 200,
-  sound:{
-    enable:true,
-    files:['https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'],
-    volume: {min: 1, max: 2}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fireworksContainer = document.getElementById("fireworks-container");
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+    const xPos = Math.random() * window.innerWidth;
+    const yPos = Math.random() * window.innerHeight;
+    firework.style.left = `${xPos}px`;
+    firework.style.top = `${yPos}px`;
+    fireworksContainer.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1500);
   }
-})
 
-fireworks.start();
+  function launchFireworks() {
+    setInterval(createFirework, 500);
+  }
 
-var context = new AudioContext();
+  launchFireworks();
+});
 
-// window.onload = () => {
-//   context.resume().then(() => {
-//     console.log('Playback resumed successfully');
-//   });
-// }
-
-   document.addEventListener('click', () => {
-      context.resume().then(() => {
-        console.log('Playback resumed successfully');
-      });
-    })
-
-// setTimeout(function(){
-//   fireworks.stop();
-// },10000)
