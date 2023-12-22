@@ -33,8 +33,9 @@ body {
     position:fixed;
     right:50px;
     top:50px;
-    box-shadow:2px 2px 10px red; 
+    box-shadow:2px 2px 10px white; 
     margin:20px;
+    color: azure;
 }
 
 .change{
@@ -48,8 +49,9 @@ body {
     border-radius:10px;
     font-size:20px;
     transition:2s ease-in;
-    box-shadow:2px 2px 10px red;
+    box-shadow:2px 2px 10px white;
     margin:20px;
+    color: orange;
 }
 
 .tofrom{
@@ -59,10 +61,11 @@ body {
     text-align:center;;
     font-size:25px;
     font-family:'Times New Roman', Times, serif;
+    box-shadow:2px 2px 10px white;
 }
 
 .submit, .submit2, .submit3, .submit4, .submit5, .submit6, .submit7, .submit8{
-    box-shadow:2px 2px 10px green;
+    box-shadow:2px 2px 10px white;
     display:block;
     margin: 20px;
     margin-top:30px;
