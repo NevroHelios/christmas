@@ -33,6 +33,45 @@
     </section>
   </main>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const showDivButton = document.getElementById("about-btn");
+    const transparentDiv = document.getElementById("menu-section");
+    const aboutProjectText = `
+    <p>🎄 Welcome to Our Festive Wonderland! 🎅</p>
+        <p>Embrace the magic of the holiday season with our enchanting Christmas project! Immerse yourself in a world of joy, twinkling lights, and heartwarming experiences. Our frontend web development team has crafted a digital celebration to bring the spirit of Christmas to your screen.</p>
+        
+        <p>🌟 Key Features:</p>
+        <ul>
+            <li>Interactive Winter Wonderland: Navigate through a captivating winter wonderland filled with animated snowflakes, cheerful characters, and delightful surprises.</li>
+            <li>Festive Countdown: Experience the anticipation with our interactive Christmas countdown clock. Watch as the days, hours, and minutes tick away until the most wonderful day of the year!</li>
+            <li>Seasonal Vibes: Imbibe the holiday spirit with themed backgrounds, joyful music, and a visually stunning design that captures the essence of Christmas.</li>
+            <li>Santa's Corner: Explore a special section dedicated to Santa Claus, complete with fun facts, stories, and perhaps a few messages from the man in red himself!</li>
+            <li>Magical Moments: Share the magic of the season with interactive elements, games, and heartwarming content suitable for all ages.</li>
+        </ul>
+        
+        <p>✨ Join Us in Spreading Holiday Cheer! ✨</p>
+        <p>Our Christmas project is a labor of love, crafted with the intention of bringing joy, warmth, and a sense of togetherness. Whether you're a child eagerly awaiting Santa's arrival or a grown-up cherishing the festive spirit, our project is designed to make your Christmas a little more magical.</p>
+        
+        <p>🎁 Wishing You a Merry and Bright Christmas! 🌟</p>
+    `;
+
+    showDivButton.addEventListener("click", function() {
+        // Change the content dynamically
+        transparentDiv.innerHTML = aboutProjectText;
+        
+        // Show the transparent div
+        transparentDiv.style.display = "block";
+    });
+
+    transparentDiv.addEventListener("click", function() {
+        // Hide the transparent div
+        transparentDiv.style.display = "none";
+    });
+});
+
+</script>
+  
   <script src="./scripts.js"></script>
 </body>
 </html>

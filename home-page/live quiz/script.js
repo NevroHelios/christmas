@@ -558,7 +558,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function endQuiz() {
     clearInterval(timerInterval);
-    displayFeedback("Quiz completed!", "blue");
+    feedbackContainer.innerHTML = "Time finished ";
+    feedbackContainer.style.color = "dark-red";
     nextButton.disabled = true;
 }
 
