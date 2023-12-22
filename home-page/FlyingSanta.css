@@ -10,36 +10,40 @@
   animation: FlyingSanta 30s infinite linear;
   bottom: 0%;
   left: 0%;
-  position: absolute;
+  position: relative;
 }
 @keyframes FlyingSanta {
   25% {
-    bottom: 80%;
-    left: 50%;
+    bottom: 10%;
+    left: 40%;
     transform: rotateY(0deg);
   }
   26% {
     transform: rotateY(180deg);
   }
   50% {
-    bottom: 60%;
-    left: 25%;
+    bottom: 20%;
+    left: 0%;
     transform: rotateY(180deg);
   }
   51% {
     transform: rotateY(0deg);
   }
   75% {
-    bottom: 40%;
-    left: 50%;
+    bottom: 30%;
+    left: 40%;
     transform: rotateY(0deg);
   }
   76% {
-    bottom: 40%;
-    left: 50%;
+    bottom: 30%;
+    left: 40%;
     transform: rotateY(180deg);
   }
   99% {
     transform: rotateY(180deg);
   }
 }
+
+
+
+

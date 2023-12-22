@@ -1,4 +1,12 @@
 
+document.addEventListener('click', function (event) {
+  // Check if the clicked element is an anchor tag
+  if (event.target.tagName === 'A') {
+    return;
+  }
+
+  // Your existing snowfall code here
+
 const cnv = document.getElementById("cnv");
 const ctx = cnv.getContext("2d");
 
@@ -40,3 +48,6 @@ function animation() {
   requestAnimationFrame(animation);
 }
 animation();
+
+
+});

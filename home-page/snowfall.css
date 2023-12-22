@@ -24,6 +24,8 @@ body,
     -webkit-animation-duration: 500s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
+    z-index:1;
+    pointer-events:none;
   }
 }
 
