@@ -2,27 +2,11 @@
 
 html {
   background-color: #000;
-    
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
 }
-/*
-h1 {
-  font-size: 8em;
-  font-family: 'Merienda One';
-  font-weight: 400;
-  position: fixed;
-  top:50%;
-  left: 0;
-  right: 0;
-  margin: 0;
-  line-height: 1;
-  transform: translateY(-50%);
-  z-index: 100;
-  text-shadow: 0 2px 10px rgba(black,0.8);
-}
-*/
+
 body,
 .more-snow {
   &:before,
@@ -33,19 +17,20 @@ body,
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(black, 0.01);
+    background-color: rgba(0, 0, 0, 0.01);
     background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
-    background-size: 30%;
+    background-size: 150%;
     -webkit-animation-name: MOVE-BG;
     -webkit-animation-duration: 500s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
   }
 }
+
 body {
   &:before {
     filter: blur(6px);
-    opacity: 0.8;
+    opacity: 0.5;
   }
   &:after {
     filter: blur(1px);
@@ -55,20 +40,21 @@ body {
     animation-duration: 100s;
   }
 }
+
 .more-snow {
   &:before {
     filter: blur(4px);
-    opacity: 0.8;
+    opacity: 0.4;
     top: -2500%;
-    background-size: 60%;
+    background-size: 90%;
     animation-duration: 150s;
   }
   &:after {
     filter: blur(2px);
-    opacity: 0.8;
+    opacity: 0; /* Set the initial opacity of falling snow to 0 */
     top: -2000%;
     background-image: url(https://laviwebfiles.com/stage/codepen/4-2-white-snow-png.png);
-    background-size: 70%;
+    background-size: 40%;
     animation-duration: 150s;
   }
 }
@@ -76,8 +62,10 @@ body {
 @-webkit-keyframes MOVE-BG {
   from {
     transform: translateY(0);
+    opacity: 0.8; /* Initial opacity of falling snow */
   }
   to {
     transform: translateY(70%);
+    opacity: 0; /* Final opacity of falling snow */
   }
 }
