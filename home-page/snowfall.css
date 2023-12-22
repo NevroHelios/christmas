@@ -1,20 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda+One");
+
+html {
+  background-color: #000;
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+body,
+.more-snow {
+  &:before,
+  &:after {
+    content: "";
+    position: fixed;
+    top: -3000%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.01);
+    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+    background-size: 150%;
+    -webkit-animation-name: MOVE-BG;
+    -webkit-animation-duration: 500s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+}
 
 body {
-  width: 100%;
-  height: 100vh;
-  /*overflow: hidden;*/
+  &:before {
+    filter: blur(6px);
+    opacity: 0.5;
+  }
+  &:after {
+    filter: blur(1px);
+    top: -1500%;
+    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+    background-size: 90%;
+    animation-duration: 100s;
+  }
 }
-#large{
-  height: 100%;
-  width: 100%;
-}
-#small, #cnv {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
- /* box-shadow: 0 0 100px white;*/
 
+.more-snow {
+  &:before {
+    filter: blur(4px);
+    opacity: 0.4;
+    top: -2500%;
+    background-size: 90%;
+    animation-duration: 150s;
+  }
+  &:after {
+    filter: blur(2px);
+    opacity: 0; /* Set the initial opacity of falling snow to 0 */
+    top: -2000%;
+    background-image: url(https://laviwebfiles.com/stage/codepen/4-2-white-snow-png.png);
+    background-size: 40%;
+    animation-duration: 150s;
+  }
+}
+
+@-webkit-keyframes MOVE-BG {
+  from {
+    transform: translateY(0);
+    opacity: 0.8; /* Initial opacity of falling snow */
+  }
+  to {
+    transform: translateY(70%);
+    opacity: 0; /* Final opacity of falling snow */
+  }
 }

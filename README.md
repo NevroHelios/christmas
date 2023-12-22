@@ -24,7 +24,7 @@ We welcome contributions from the community to make the Christmas Project even m
 ### Fork the repository.
 Create a new branch 
 ```bash
-git checkout -b feature/your-feature).
+git checkout -b feature/your-feature
 ```
 Make your changes.
 Test thoroughly.
