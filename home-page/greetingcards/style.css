@@ -38,7 +38,7 @@ body {
     color: azure;
 }
 
-@media(max-width:800px){
+@media(max-width:1000px){
     .christmas{
     height:600px;
     width:400px;
