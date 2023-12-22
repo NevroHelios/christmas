@@ -1,3 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('christmas-6.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Gill Sans', sans-serif; /* Set a default font-family */
+}
+
+.christmas {
+    background-image: url('christmas-6.jpg'); /* Replace 'your-christmas-image.jpg' with the path to your Christmas image */
+    background-size: cover;
+    background-position: center;
+    /* Add any other styles you want for the Christmas div elements */
+}
+
 #ch1{
     transition:2s ease-in;
     background-image:url("christmas1.jpg");
@@ -43,7 +64,11 @@
 .submit, .submit2, .submit3, .submit4, .submit5, .submit6, .submit7, .submit8{
     box-shadow:2px 2px 10px green;
     display:block;
-    margin:20px;
+    margin: 20px;
+    margin-top:30px;
+    height: 40px;
+    width: 60px;
+    color: azure;
 }
 
 #content{
@@ -71,3 +96,11 @@
     padding:50px;
 }
 
+.glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}

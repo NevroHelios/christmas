@@ -1,117 +1,150 @@
 <!DOCTYPE html>
 <html>
-<head>
-  
+  <head>
     <style>
-      body{
+      body {
         margin: 0;
         padding: 0;
       }
-        .parallax {
-            /* Set a specific height */
-            height: 800px;
+      .parallax {
+        /* Set a specific height */
+        height: 800px;
 
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-            /* Add transition effect */
-            transition: background-position 0.5s;
-            
-            /* Add text styling */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+        /* Add transition effect */
+        transition: background-position 0.5s;
 
-        .parallax1 {
-            /* The image used */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("christmas-1.jpg");
-        }
+        /* Add text styling */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-        .parallax2 {
-            /* The image used */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("christmas-2.jpg");
-        }
+      .parallax1 {
+        /* The image used */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("christmas-1.jpg");
+      }
 
-        .parallax3 {
-            /* The image used */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("christmas-3.jpg");
-        }
-        .parallax4 {
-            /* The image used */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("christmas-4.jpg");
-        }
+      .parallax2 {
+        /* The image used */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("christmas-2.jpg");
+      }
 
-        .parallax5 {
-            /* The image used */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("christmas-5.jpg");
-        }
+      .parallax3 {
+        /* The image used */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("christmas-3.jpg");
+      }
+      .parallax4 {
+        /* The image used */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("christmas-4.jpg");
+      }
+
+      .parallax5 {
+        /* The image used */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("christmas-5.jpg");
+      }
     </style>
-    <link rel="stylesheet" href="snowfall.css">
-    <link rel="stylesheet" href="countdown.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script>
-       $$(window).scroll(function() {
-    var scrollTop = $(window).scrollTop();
-    $(".parallax").each(function() {
-        var speed = $(this).data('speed') || 1; // Default speed is 0.2
-        $(this).css("background-position", "center calc(50% - " + (scrollTop * speed) + "px)");
-    });
-});
-
-   </script>
-   
-</head>
-<body>
-  <div class="snow">
-   <div class="parallax parallax1" data-speed="'0.8">Section 1</div>
-   <div class="parallax parallax2"><a href="./GTREETINGCARDS/index.html" target="_blank">CUSTOMISE YOUR GREETING CARDS AND SHARE.</a></div>
-   <div class="parallax parallax3">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <section id="interactive" class="parallax-section">
-        <div class="parallax-bg">
-          <!-- Add interactive games, puzzles, or quizzes gif here -->
-          <img src="https://sweezy-cursors.com/wp-content/uploads/cursor/christmas-santa-claus-gift-animated/christmas-santa-claus-gift-animated-custom-cursor.gif" alt="Interactive Games" />
-          <div class="snowflake"></div> <!-- Snowfall effect -->
-        </div>
-        <div class="parallax-content">
-          <h2 style="text-align:center">Countdown</h2>
-          <p>Get ready to engage in the mood of festivity!</p>
-          <!-- Countdown Timer -->
-          <div id="countdown-clock" class="d-flex justify-content-center">
-            <div class="time d-flex flex-column align-items-center">
-              <span id="days" class="display-4"></span>
-              <span class="label">Days</span>
-            </div>
-            <div class="time d-flex flex-column align-items-center">
-              <span id="hours" class="display-4"></span>
-              <span class="label">Hours</span>
-            </div>
-            <div class="time d-flex flex-column align-items-center">
-              <span id="minutes" class="display-4"></span>
-              <span class="label">Minutes</span>
-            </div>
-            <div class="time d-flex flex-column align-items-center">
-              <span id="seconds" class="display-4"></span>
-              <span class="label">Seconds</span>
+    <link rel="stylesheet" href="snowfall.css" />
+    <link rel="stylesheet" href="countdown.css" />
+    <link rel="stylesheet" href="/FlyingSanta.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $$(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+        $(".parallax").each(function () {
+          var speed = $(this).data("speed") || 1; // Default speed is 0.2
+          $(this).css(
+            "background-position",
+            "center calc(50% - " + scrollTop * speed + "px)"
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="snow">
+      <div class="parallax parallax1" data-speed="'0.8">Section 1</div>
+      <div class="parallax parallax2">
+        <a href="./GTREETINGCARDS/index.html" target="_blank"
+          >CUSTOMISE YOUR GREETING CARDS AND SHARE.</a
+        >
+      </div>
+      <div class="parallax parallax3">
+        <link
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          rel="stylesheet"
+        />
+        <section id="interactive" class="parallax-section">
+          <div class="parallax-bg">
+            <!-- Add interactive games, puzzles, or quizzes gif here -->
+            
+            <div class="snowflake"></div>
+            <!-- Snowfall effect -->
+          </div>
+          <div class="parallax-content">
+            <h2 style="text-align: center">Countdown</h2>
+            <p>Get ready to engage in the mood of festivity!</p>
+            <!-- Countdown Timer -->
+            <div id="countdown-clock" class="d-flex justify-content-center">
+              <div class="time d-flex flex-column align-items-center">
+                <span id="days" class="display-4"></span>
+                <span class="label">Days</span>
+              </div>
+              <div class="time d-flex flex-column align-items-center">
+                <span id="hours" class="display-4"></span>
+                <span class="label">Hours</span>
+              </div>
+              <div class="time d-flex flex-column align-items-center">
+                <span id="minutes" class="display-4"></span>
+                <span class="label">Minutes</span>
+              </div>
+              <div class="time d-flex flex-column align-items-center">
+                <span id="seconds" class="display-4"></span>
+                <span class="label">Seconds</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-   </div>
-   <div class="parallax parallax4">Section 4</div>
-   <div class="parallax parallax5">Section 5</div>
-  </div>
-  
-  <script src="snowfall.js"></script>
-  <script src="countdown.js"></script>
-  
-</body>
+        </section>
+      </div>
+      <div class="parallax parallax4">
+        <img
+          class="santa"
+          src="https://media.tenor.com/zuvXgh0TN9gAAAAj/santa-claus-gift.gif"
+          alt="Santa Be Watchin"
+        />
+      </div>
+      <div class="parallax parallax5">Section 5</div>
+    </div>
 
+    <script src="snowfall.js"></script>
+    <script src="countdown.js"></script>
+  </body>
 </html>
