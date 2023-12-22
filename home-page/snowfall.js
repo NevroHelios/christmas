@@ -1,5 +1,5 @@
 
-const cnv = document.getElementsByClass("cnv");
+const cnv = document.getElementById("cnv");
 const ctx = cnv.getContext("2d");
 
 cnv.width = (window.innerWidth * 75) / 100;
