@@ -2,7 +2,7 @@
 <html>
   <head>
     <style>
-
+      
       body {
         margin: 0;
         padding: 0;
@@ -36,8 +36,8 @@
             rgba(0, 0, 0, 0.5)
           ),
           url("christmas-1.jpg");
-      }
-
+        }
+        
       .parallax2 {
         /* The image used */
         background-image: linear-gradient(
@@ -68,14 +68,15 @@
       .parallax5 {
         /* The image used */
         background-image: linear-gradient(
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
           ),
           url("christmas-5.jpg");
-      }
-    </style>
-    
-    <link rel="stylesheet" href="snowfall.css" />
+        }
+        </style>
+    <link rel="stylesheet" href="./tailingsnow.css">
+    <link rel="stylesheet" href="./snowfall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="fireworks.css"/>
     <link rel="stylesheet" href="countdown.css" />
     <link rel="stylesheet" href="FlyingSanta.css" />
@@ -94,7 +95,9 @@
     </script>
   </head>
   <body>
+    <div class="snow-container"></div>
     <div id="fireworks-container"></div>
+    <div id="snowflake-container"></div>
     
     <div class="snow">
       <div class="parallax parallax1">   <!-- DONT WRITE ANYTING HERE DANGER!!!!!!!!!!! -->
@@ -155,7 +158,7 @@
       </div>
     </div>
     
-
+    <script src="./tailingsnow.js"></script>
     <script src="snowfall.js"></script>
     <script src="countdown.js"></script>
     <script src="fireworks.js"></script>
