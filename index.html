@@ -4,171 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Celebration</title>
-  
-  
-  <style>
-    /* Existing styles */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      background-image: url('https://r4.wallpaperflare.com/wallpaper/92/49/83/santa-claus-reindeer-sleigh-flying-wallpaper-98d16f26ad5dbbe6f8112fe8ce974871.jpg');
-      background-size: cover;
-      overflow: hidden;
-    }
-    
-    .buttons-container {
-      position: absolute;
-      top: 20px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0 20px;
-      box-sizing: border-box;
-      z-index: 2;
-    }
-
-    .button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-    }
-
-    #about-btn {
-      background-image: linear-gradient(to bottom right, #B31217, #F03813);
-      color: #FFF;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    #explore-btn {
-      background-image: linear-gradient(to bottom right, #0B486B, #0E4C67);
-      color: #FFF;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-    
-    .home {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: rgba(27, 54, 150, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-      position: relative; /* Added */
-      z-index: 1; /* Added */
-    }
-    
-    /* Snowball styles */
-    .snowball {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: #fff;
-      pointer-events: none;
-      animation: snowball-animation 2s ease-out infinite;
-      z-index: 0; /* Updated */
-    }
-    
-    @keyframes snowball-animation {
-      0% {
-        opacity: 0;
-        transform: translate(0, 0);
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translate(var(--x), var(--y));
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <canvas id="canvas"></canvas>
   <div class="buttons-container">
     <button id="about-btn" class="button">About</button>
     <button id="explore-btn" class="button">Explore</button>
   </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="menu-section" id="menu-section">
+    <!-- Your menu content goes here -->
+    <p>This is the menu section</p>
+    <!-- Add your menu items or content -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, adipisci. Officiis, eum iure. Esse amet nulla voluptatem dolor rem laboriosam, blanditiis, rerum recusandae eum aliquam molestiae fugiat maiores suscipit facilis. Fuga, nobis omnis dolorem repudiandae in facilis corrupti hic. Voluptates, non accusantium nisi et labore excepturi commodi amet sed iure quidem placeat, provident porro possimus. Debitis rerum eligendi et tenetur!</p>
+  </div>
+  
+
   <main>
     <section class="home">
-      <h1>Welcome to Our Christmas Celebration!</h1>
-      <p>Join us in spreading the joy and warmth of the holiday season.</p>
-      
+      <div class="content" id="canvas">
+        <h1>Welcome to Our Christmas Celebration!</h1>
+        <p>Join us in spreading the joy and warmth of the holiday season.</p>
+        <!-- <a href="#about-section" class="btn">Learn More</a> -->
+      </div>
     </section>
   </main>
 </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("explore-btn").addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevents snowballs when button is clicked
-        window.location.href = 'home-page/index.html'
-
-        const snowball = document.createElement('div');
-        snowball.classList.add('snowball');
-        const size = Math.random() * 20 + 10;
-        const xPos = event.clientX - size / 2;
-        const yPos = event.clientY - size / 2;
-        const randomX = Math.random() * 200 - 100;
-        const randomY = Math.random() * 200 - 100;
-  
-        snowball.style.width = size + 'px';
-        snowball.style.height = size + 'px';
-        snowball.style.top = yPos + 'px';
-        snowball.style.left = xPos + 'px';
-        snowball.style.setProperty('--x', randomX + 'px');
-        snowball.style.setProperty('--y', randomY + 'px');
-  
-        document.body.appendChild(snowball);
-  
-        setTimeout(() => {
-          snowball.remove();
-        }, 2000);
-      });
-      
-      document.addEventListener('mousemove', createSnowballOnMove);
-      
-      function createSnowballOnMove(event) {
-        const snowball = document.createElement('div');
-        snowball.classList.add('snowball');
-        const size = Math.random() * 20 + 10;
-        const xPos = event.clientX - size / 2;
-        const yPos = event.clientY - size / 2;
-        const randomX = Math.random() * 200 - 100;
-        const randomY = Math.random() * 200 - 100;
-  
-        snowball.style.width = size + 'px';
-        snowball.style.height = size + 'px';
-        snowball.style.top = yPos + 'px';
-        snowball.style.left = xPos + 'px';
-        snowball.style.setProperty('--x', randomX + 'px');
-        snowball.style.setProperty('--y', randomY + 'px');
-  
-        document.body.appendChild(snowball);
-  
-        setTimeout(() => {
-          snowball.remove();
-        }, 2000);
-      }
-    });
-  </script>
-  
-  
+  <script src="./fireworks.js"></script>
+  <script src="./scripts.js"></script>
 </body>
 </html>
