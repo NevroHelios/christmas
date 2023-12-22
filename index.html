@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Celebration</title>
   
-  
+  <link rel="stylesheet" href="fireworks.css">
   <style>
     /* Existing styles */
     body {
@@ -45,7 +45,7 @@
     }
 
     #about-btn {
-      background-image: linear-gradient(to bottom right, #B31217, #F03813);
+      background-image: linear-gradient(to bottom right, #0E4C67,#0E4C67 );
       color: #FFF;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     }
@@ -98,9 +98,10 @@
       }
     }
   </style>
+  
 </head>
 <body>
-  
+  <canvas id="canvas"></canvas>
   <div class="buttons-container">
     <button id="about-btn" class="button">About</button>
     <button id="explore-btn" class="button">Explore</button>
@@ -113,7 +114,8 @@
     </section>
   </main>
 </div>
-
+  <script src="fireworks.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("explore-btn").addEventListener("click", function (event) {
@@ -168,7 +170,6 @@
       }
     });
   </script>
-  
   
 </body>
 </html>
