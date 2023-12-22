@@ -38,6 +38,19 @@ body {
     color: azure;
 }
 
+@media(max-width:1000px){
+    .christmas{
+    height:600px;
+    width:400px;
+    border:1px solid black;
+    position:fixed;
+    top:1000px;
+    right:50px;
+    box-shadow:2px 2px 10px white; 
+    margin:20px;
+    color: azure;
+}}
+
 .change{
     transform:rotateY(-180deg);
     opacity:0;

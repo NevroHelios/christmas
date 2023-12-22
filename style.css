@@ -160,29 +160,28 @@ transform: scale(1.1); /* Increase the size to 110% on hover */
 }
 
 
+/* Snowball styles */
+.snowball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  pointer-events: none;
+  animation: snowball-animation 2s ease-out infinite;
+  z-index: 0; /* Updated */
+}
 
-  /* Snowball styles */
-  .snowball {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff;
-    pointer-events: none;
-    animation: snowball-animation 2s ease-out infinite;
-    z-index: 0; /* Updated */
+@keyframes snowball-animation {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
   }
-  
-  @keyframes snowball-animation {
-    0% {
-      opacity: 0;
-      transform: translate(0, 0);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      transform: translate(var(--x), var(--y));
-    }
+  50% {
+    opacity: 1;
   }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y));
+  }
+}
