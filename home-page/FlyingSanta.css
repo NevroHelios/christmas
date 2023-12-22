@@ -1,7 +1,7 @@
 .santa {
   width:20vw;
   min-width:175px;
-  z-index: 600;
+  z-index:0;
   cursor: pointer;
   -webkit-animation: FlyingSanta 30s infinite linear;
   -moz-animation: FlyingSanta 30s infinite linear;
@@ -14,29 +14,29 @@
 }
 @keyframes FlyingSanta {
   25% {
-    bottom: 10%;
-    left: 40%;
-    transform: rotateY(0deg);
+    bottom: -20%;
+    left: -60%;
+    transform: rotateY(180deg);
   }
   26% {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
   }
   50% {
     bottom: 20%;
-    left: 0%;
+    left: -20%;
     transform: rotateY(180deg);
   }
   51% {
     transform: rotateY(0deg);
   }
   75% {
-    bottom: 30%;
-    left: 40%;
+    bottom: 0%;
+    left: 0%;
     transform: rotateY(0deg);
   }
   76% {
-    bottom: 30%;
-    left: 40%;
+    bottom: 10%;
+    left: 0%;
     transform: rotateY(180deg);
   }
   99% {
