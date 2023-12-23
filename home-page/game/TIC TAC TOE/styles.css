@@ -1,0 +1,88 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: url('background.jpg') center/cover;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* Make the boxes round */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid black;
+    /* Add a black border */
+}
+
+.cell:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    /* Remove the background */
+    filter: none;
+    /* Remove the blur effect */
+    border: none;
+    /* Remove the border from the pseudo-element */
+    z-index: -1;
+}
+
+.cell:hover {
+    background: white;
+    color: black;
+}
+
+.status {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.cell.winner {
+    background-color: seagreen;
+    color: black;
+    /* Red background for the winning line */
+}
+
+.reset-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reset-button:hover {
+    background-color: #27ae60;
+}

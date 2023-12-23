@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #snowflake-container {
+    position: relative;
+  }
+  
+  .snowflake {
+    position: absolute;
+    color: white;
+    animation-duration: 2s;
+  }

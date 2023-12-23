@@ -1,73 +1,60 @@
-@import url("https://fonts.googleapis.com/css?family=Merienda+One");
-
+body,
 html {
-  background-color: #000;
-  background-size: cover;
-  height: 100%;
-  background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(20, 20, 25, 1);
 }
 
 body,
-.more-snow {
-  &:before,
-  &:after {
-    content: "";
+html {
+    overflow-x: hidden;
+    width: 100vw;
+    height: auto;
+}
+
+.snow-container {
     position: fixed;
-    top: -3000%;
-    bottom: 0;
-    right: 0;
+    top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.01);
-    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
-    background-size: 150%;
-    -webkit-animation-name: MOVE-BG;
-    -webkit-animation-duration: 500s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    z-index:1;
-    pointer-events:none;
-  }
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
 }
 
-body {
-  &:before {
-    filter: blur(6px);
-    opacity: 0.5;
-  }
-  &:after {
-    filter: blur(1px);
-    top: -1500%;
-    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
-    background-size: 90%;
-    animation-duration: 100s;
-  }
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
 }
 
-.more-snow {
-  &:before {
-    filter: blur(4px);
-    opacity: 0.4;
-    top: -2500%;
-    background-size: 90%;
-    animation-duration: 150s;
-  }
-  &:after {
-    filter: blur(2px);
-    opacity: 0; /* Set the initial opacity of falling snow to 0 */
-    top: -2000%;
-    background-image: url(https://laviwebfiles.com/stage/codepen/4-2-white-snow-png.png);
-    background-size: 40%;
-    animation-duration: 150s;
-  }
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(100vh);
+    }
 }
 
-@-webkit-keyframes MOVE-BG {
-  from {
-    transform: translateY(0);
-    opacity: 0.8; /* Initial opacity of falling snow */
-  }
-  to {
-    transform: translateY(70%);
-    opacity: 0; /* Final opacity of falling snow */
-  }
+@keyframes diagonal-fall {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.25;
+        transform: translate(10vw, 100vh);
+    }
 }

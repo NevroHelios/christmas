@@ -1,0 +1,78 @@
+body{
+    background-image: url("christmas-7.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+h1,h2,h3{
+    text-align:center;
+}
+
+#startdiv{
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+}
+.maindiv{
+    height:300px;
+    width:500px;
+    margin:auto;
+    border:2px solid transparent;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.game{
+    height:100px;
+    width:100px;
+    border:2px solid transparent;
+    border-radius:50%;
+}
+
+.score{
+    height:200px;
+    width:400px;
+    margin:auto;
+    border:2px solid transparent;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.scoreboard{
+    height:100px;
+    width:100px;
+    border:2px solid transparent;
+    border-radius:50%;
+}
+
+#rock{
+    background-image:url("rock.jpg");
+    background-size:contain;
+}
+
+#paper{
+    background-image:url("paper.jpg");
+    background-size:contain;
+}
+
+#scissors{
+    background-image:url("scissors.jpg");
+    background-size:contain;
+}
+
+#start{
+    height: 30px;
+    border-radius: 30px;
+    color: white;
+  background-color: rgb(21, 21, 100);
+  transition: 0.3s ease;
+
+}
+
+#start:hover {
+    color: rgb(21, 21, 100);
+  background-color: white;
+}

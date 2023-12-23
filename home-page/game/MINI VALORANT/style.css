@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    text-align:center;
+}
+
+
+body{
+    text-align:center;
+}
+#playbox2{
+    text-align:center;
+    margin:auto;
+}
+
+.instructions{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#warning, #starttimeout, #decrease, #nettime{
+    color:red;
+}
