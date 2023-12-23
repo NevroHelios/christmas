@@ -12,15 +12,6 @@ playbox.addEventListener("click", range);
 function range(){
     if(flag==1)
     playbox.remove();
-    if(body.hasChildNodes==false){
-        playbox=document.createElement("button");
-        playbox.innerText="Game Over!! Refresh the game !!";
-        playbox.classList.add("playbox2");
-    }
-    /* let score=0;
-    let starttimeout=prompt("enter starting timeout in miliseconds");
-    let decrease=prompt("enter decrease in timeout in miliseconds");
-    scoreboard.innerText="Score:"+score; */
     score=score+1;
     let side=Math.floor(Math.random()*100)+25;
     let smallbox=document.createElement("div");

@@ -16,3 +16,9 @@ body{
     margin:auto;
 }
 
+.instructions{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#warning, #starttimeout, #decrease, #nettime{
+    color:red;
+}

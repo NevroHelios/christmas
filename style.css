@@ -104,6 +104,9 @@
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    font-family: cursive; 
+    font-family: 700; 
+    font-style: italic;
 }
 
   /* Display menu content when menu is shown */
