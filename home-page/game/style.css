@@ -6,7 +6,7 @@ body {
 
 .carousel {
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     height: 100vh;
     overflow: hidden;
     pointer-events: none;
@@ -22,7 +22,7 @@ body {
     --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
     overflow: hidden;
     position: absolute;
-    z-index: var(--zIndex);
+    /* z-index: var(--zIndex); */
     width: var(--width);
     height: var(--height);
     margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
@@ -43,7 +43,7 @@ body {
 
 .carousel-item .carousel-box {
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +56,7 @@ body {
 .carousel-item .carousel-box:before {
     content: "";
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     top: 0;
     left: 0;
     width: 100%;
@@ -66,7 +66,7 @@ body {
 
 .carousel-item .title {
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     color: #fff;
     bottom: 20px;
     left: 20px;
@@ -95,7 +95,7 @@ body {
 
 .layout {
     position: absolute;
-    z-index: 0;
+    /* z-index: 0; */
     top: 0;
     left: 0;
     width: 100%;
@@ -106,7 +106,7 @@ body {
 .layout:before {
     content: "";
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     top: 0;
     left: 90px;
     width: 10px;
@@ -132,7 +132,7 @@ body {
 
 .logo {
     position: absolute;
-    z-index: 2;
+    /* z-index: 2; */
     top: 28px;
     right: 28px;
     width: 30px;
@@ -154,7 +154,7 @@ body {
 
 .social {
     position: absolute;
-    z-index: 10;
+    /* z-index: 10; */
     bottom: 20px;
     right: 25px;
     color: #fff;
@@ -174,7 +174,7 @@ body {
 
 .cursor {
     position: fixed;
-    z-index: 10;
+    /* z-index: 10; */
     top: 0;
     left: 0;
     --size: 40px;

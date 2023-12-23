@@ -39,7 +39,6 @@ body {
     color: azure;
 }
 
-
 .change{
     transform:rotateY(-180deg);
     opacity:0;
