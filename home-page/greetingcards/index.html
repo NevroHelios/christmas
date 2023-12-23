@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    
     <input type="text" placeholder="To?" class="to glass" />
     <button class="submit glass">SUBMIT</button>
     <input type="text2" placeholder="From?" class="from glass" />
@@ -122,8 +123,23 @@
         <h3 class="tofrom">TO  <span class="sending">YOU</span> <br> FROM  <span class="sender">ME</span></h3>
     </div>
     <button id="shareButton glass">Share via WhatsApp</button>
+    
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://kit.fontawesome.com/9d5de67824.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- jQuery Ripples JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+<script>
+    $(document).ready(function () {
+        
+
+        $(".christmas").ripples({
+            resolution: 200,
+            perturbance: 0.004,
+        });
+    });
+</script>
 </body>
 </html>
