@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #222; /* Set a dark background color */
+    background-image: url("background.jpg"); /* Set a dark background color */
     overflow: hidden; /* Hide overflowing elements */
 }
 
