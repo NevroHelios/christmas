@@ -91,7 +91,7 @@
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
       const audioPlayer = document.getElementById('audioPlayer');
-      const musicFilesWithSound = ['./music player/music/snowman.mp3', './music player/music/shutup.mp3'];
+      const musicFilesWithSound = ['./music player/music/snowman.mp3'];
       const musicFilesWithoutSound = []; // Define an empty array for music without sound
 
       // Retrieve the user's sound preference from localStorage
@@ -121,29 +121,7 @@
           audioPlayer.play();
           sessionStorage.setItem('musicIndex', index.toString());
         }
-        function playNextSong() {
-        currentIndex = (currentIndex + 1) % musicFiles.length;
-        playSongAtIndex(currentIndex);
-      }
 
-      function playPreviousSong() {
-        currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
-        playSongAtIndex(currentIndex);
-      }
-
-      let isRepeat = false; // Variable to toggle repeat status
-
-      function toggleRepeat() {
-        isRepeat = !isRepeat;
-      }
-
-      audioPlayer.addEventListener('ended', function () {
-        if (isRepeat) {
-          playSongAtIndex(currentIndex); // Repeat the current song if isRepeat is true
-        } else {
-          playNextSong();
-        }
-    });
 
         playSongAtIndex(currentIndex);
       }
