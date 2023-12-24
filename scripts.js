@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set musicFiles based on the user's sound preference
   if (soundPreference === 'withSound') {
     window.location.href = 'home-page/index.html?sound=withSound'
+    console.log('hmm')
   } else {
     window.location.href = 'home-page/index.html?sound=withoutSound'
   }
