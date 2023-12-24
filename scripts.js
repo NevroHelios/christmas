@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("explore-btn").addEventListener("click", function (event) {
     event.stopPropagation(); // Prevents snowballs when button is clicked
 
-    const soundPreference = localStorage.getItem('soundPreference');
+    const urlParams = new URLSearchParams(window.location.search);
+    const soundPreference = urlParams.get('sound');
 
     
 

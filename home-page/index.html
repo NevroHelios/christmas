@@ -95,7 +95,8 @@
       const musicFilesWithoutSound = []; // Define an empty array for music without sound
 
       // Retrieve the user's sound preference from localStorage
-      const soundPreference = localStorage.getItem('soundPreference');
+      const urlParams = new URLSearchParams(window.location.search);
+      const soundPreference = urlParams.get('sound');
 
       let musicFiles = []; // Initialize an empty array for music based on the user's preference
 
