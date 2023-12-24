@@ -22,7 +22,19 @@ menuSection.classList.remove('active');
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("explore-btn").addEventListener("click", function (event) {
     event.stopPropagation(); // Prevents snowballs when button is clicked
-    window.location.href = 'home-page/index.html'
+
+    const soundPreference = localStorage.getItem('soundPreference');
+
+    
+
+  // Set musicFiles based on the user's sound preference
+  if (soundPreference === 'withSound') {
+    window.location.href = 'home-page/index.html?sound=withSound'
+  } else {
+    window.location.href = 'home-page/index.html?sound=withoutSound'
+  }
+
+    // window.location.href = 'home-page/index.html'
 
     const snowball = document.createElement('div');
     snowball.classList.add('snowball');
