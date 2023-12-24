@@ -423,10 +423,9 @@ const questions = [{
         options: ["Panettone", "Tiramisu", "Cannoli", "Gelato"],
         correctAnswer: "Panettone"
     },
-    // Add more questions and answers here
+    
 ];
 
-// Add more questions and answers here
 
 
 let currentQuestion = 0;
@@ -468,26 +467,26 @@ function checkAnswer(selectedOption) {
     seenQuestions++;
 
     if (selectedOption === questions[currentQuestion].correctAnswer) {
-        displayFeedback("Correct!", "green");
-        score++; // Increment the score for correct answers
+        displayFeedback("CORRECT!", "green");
+        score++; 
     } else {
-        displayFeedback("Incorrect!", "red");
+        displayFeedback("INCORRECT!", "red");
     }
 
-    // Update and display the score
+    
     scoreSpan.innerHTML = score;
     attemptedSpan.innerHTML = attemptedQuestions;
     totalSpan.innerHTML = seenQuestions;
 
 
-    // Delay the loading of the next question by 2 seconds
+    
     setTimeout(function() {
         currentQuestion++;
 
         if (currentQuestion < questions.length) {
             showQuestion(questions[currentQuestion]);
         } else {
-            displayFeedback("Quiz completed!", "blue");
+            displayFeedback("QUIZ COMPLETED!", "blue");
         }
     }, 2000);
 }
@@ -496,7 +495,7 @@ function displayFeedback(message, color) {
     feedbackContainer.innerHTML = message;
     feedbackContainer.style.color = color;
 
-    // Clear the feedback after a short delay (e.g., 2 seconds)
+    
     setTimeout(() => {
         feedbackContainer.innerHTML = "";
     }, 1000);
@@ -546,19 +545,19 @@ document.addEventListener("DOMContentLoaded", function() {
         setInterval(moveSnowflake, updateInterval);
     }
 
-    // Create initial set of snowflakes
+    
     for (let i = 0; i < 50; i++) {
         createSnowflake();
     }
 
-    // Create additional snowflakes every 2 seconds
+    
     setInterval(createSnowflake, 2000);
 });
 
 
 function endQuiz() {
     clearInterval(timerInterval);
-    feedbackContainer.innerHTML = "Time finished ";
+    feedbackContainer.innerHTML = "TIME FINISHED";
     feedbackContainer.style.color = "dark-red";
     nextButton.disabled = true;
 }
@@ -579,6 +578,6 @@ function startTimer(durationInSeconds) {
 }
 
 
-// Initial display
+
 showQuestion(questions[currentQuestion]);
 startTimer(300);
