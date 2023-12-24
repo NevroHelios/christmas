@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Bar Example</title>
+  <style>
+    /* Your CSS code here */
+    @charset "utf-8";
+
+:root {
+  --loadingbar-background-color: #f5f5f5;
+  --loadingbar-prospect-color: #666666;
+}
+
+html.dark {
+  --loadingbar-background-color: #2c2b30;
+  --loadingbar-prospect-color: #ece5d8;
+}
+
+html.dark body {
+  background-color: #15191c;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 62.5px;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.5s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.loading-bar img {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  filter: drop-shadow(0 -500px 0 var(--loadingbar-background-color));
+}
+
+.loading-bar::after {
+  content: "";
+  position: absolute;
+  top: 500px;
+  left: 0;
+  filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
+  width: 500px;
+  height: 62.5px;
+  background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
+  background-size: 500px 62.5px;
+  background-position-x: 0;
+  animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
+}
+
+@media screen and (max-width: 719px) {
+  .loading-bar {
+    display: none;
+  }
+
+  @media screen and (orientation: landscape) {
+    .loading-bar {
+      display: block !important;
+      transform: translate(-50%, -50%) scale(0.7) !important;
+    }
+  }
+}
+
+@supports not (filter: drop-shadow(0 0 0 #fff)) {
+  .loading-bar:before {
+    content: "Your browser does not support the animation";
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0;
+    background-size: 500px 62.5px;
+  }
+
+  16.6% {}
+  33.2% {}
+  49.8% {}
+  66.4% {}
+  83% {}
+  100% {
+    width: 500px;
+    animation-fill-mode: forwards;
+  }
+}
+.loading-bar::after {
+    /* ... (other styles) ... */
+    animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
+    /* animation-play-state: paused; Pause the animation initially} */
+}
+#openModalButtonWithSound,
+#openModalButtonWithoutSound {
+  position: absolute;
+  top: calc(50% + 62.5px); /* Position it below the loading bar */
+  left: 43%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  /* Gradient background */
+  background: #510AC9;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: azure; /* For text color */
+  display: inline-block; /* Ensure buttons are displayed in a line */
+}
+
+#openModalButtonWithoutSound {
+  /* Adjusted position for the second button */
+  top: calc(50% + 22.5px); /* Same position as the first button */
+  left: 43%; /* Align with the first button */
+  transform: translateX(50%) translateY(40px); /* Shift the second button downwards */
+}
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Your HTML content -->
+  <div class="loading-bar" role="presentation" aria-hidden="true">
+    <img longdesc="https://ys.mihoyo.com/main/">
+  </div>
+
+  <!-- <button id="openModalButton">les goo</button> -->
+  <!-- Additional HTML content or elements -->
+  <!-- Modal HTML -->
+<div class="modal-overlay" id="modalOverlay"></div>
+<div class="modal" id="myModal">
+  <div class="button-container">
+    <button id="openModalButtonWithSound" onclick="redirectWithSound()">Continue with Sound</button>
+    <button id="openModalButtonWithoutSound" onclick="redirectWithoutSound()">Continue without Sound</button>
+  </div>
+</div>
+
+
+
+  <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Select both buttons
+  let buttonWithSound = document.getElementById('openModalButtonWithSound');
+  let buttonWithoutSound = document.getElementById('openModalButtonWithoutSound');
+
+  // Function to enable buttons after a delay
+  function enableButtons() {
+    buttonWithSound.removeAttribute('disabled');
+    buttonWithoutSound.removeAttribute('disabled');
+  }
+
+  // Enable buttons after 3.5 seconds
+  setTimeout(enableButtons, 3500); // 3.5 seconds = 3500 milliseconds
+});
+
+
+function redirectWithSound() {
+  window.location.href = './index.html?sound=withSound';
+}
+
+function redirectWithoutSound() {
+  window.location.href = './index.html?sound=withoutSound';
+}
+
+
+
+    // Dark Mode logic (you provided)
+    (function() {
+    //   window.addEventListener(
+    //     "click",
+    //     () => document.documentElement.classList.toggle("dark"),
+    //     false
+    //   );
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const setting = localStorage.getItem("color-schema") || "auto";
+      if (setting === "dark" || (prefersDark && setting !== "light"))
+        document.documentElement.classList.toggle("dark", true);
+    })();
+    document.addEventListener('DOMContentLoaded', function () {
+    let loadingBar = document.querySelector('.loading-bar::after');
+    
+    
+  });
+  </script>
+</body>
+
+</html>

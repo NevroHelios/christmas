@@ -39,72 +39,79 @@
             Your browser does not support the audio element.
         </audio>
 
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const audioPlayer = document.getElementById('audioPlayer');
-            const musicFiles = [
-              './home-page/music player/music/Last Christmas - Wham!.m4a',
-              './home-page/music player/music/Santa Claus Is Coming To Town - Jackson 5.m4a',
-              './home-page/music player/music/Santa Tell Me - Ariana Grande.m4a',
-              './home-page/music player/music/spotifydown.com - Deck The Halls.mp3',
-              './home-page/music player/music/spotifydown.com - Northern Lights.mp3',
-              './home-page/music player/music/spotifydown.com - Shut Up and Dance.mp3',
-              './home-page/music player/music/spotifydown.com - Snowman - Sped Up Version.mp3',
-              './home-page/music player/music/spotifydown.com - ただ声一つ.mp3'
-            ];
-        
-            // Set the volume to 0.05
-            audioPlayer.volume = 0.05;
-        
-            // Retrieve the current song index from sessionStorage
-            let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 6; // Index of "Snowman by Sia"
-        
-            // Function to play a random song
-            function playRandomSong() {
-              currentIndex = Math.floor(Math.random() * musicFiles.length);
-              playSongAtIndex(currentIndex);
-            }
-        
-            // Function to play a song at a specific index
-            function playSongAtIndex(index) {
-              const currentSong = musicFiles[index];
-              audioPlayer.src = currentSong;
-              audioPlayer.play();
-        
-              // Store the current song index in sessionStorage
-              sessionStorage.setItem('musicIndex', index.toString());
-            }
-        
-            // Function to pause the currently playing song
-            function pauseSong() {
-              audioPlayer.pause();
-            }
-        
-            // Function to play the next song
-            function playNextSong() {
-              currentIndex = (currentIndex + 1) % musicFiles.length;
-              playSongAtIndex(currentIndex);
-            }
-        
-            // Function to play the previous song
-            function playPreviousSong() {
-              currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
-              playSongAtIndex(currentIndex);
-            }
-        
-            // Function to toggle repeat status
-            function toggleRepeat() {
-              isRepeat = !isRepeat;
-            }
-        
-            // Event listener for the end of a song
-            audioPlayer.addEventListener('ended', playNextSong);
-        
-            // Play the first song
-            playSongAtIndex(currentIndex);
-          });
-        </script>
-        
+        <audio id="audioPlayer"></audio>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const audioPlayer = document.getElementById('audioPlayer');
+  const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
+  const musicFilesWithoutSound = []; // Define an empty array for music without sound
+
+  // Retrieve the user's sound preference from localStorage
+  const soundPreference = localStorage.getItem('soundPreference');
+
+  let musicFiles = []; // Initialize an empty array for music based on the user's preference
+
+  // Set musicFiles based on the user's sound preference
+  if (soundPreference === 'withSound') {
+    musicFiles = musicFilesWithSound;
+  } else {
+    musicFiles = musicFilesWithoutSound;
+  }
+
+  // Rest of your music player logic remains unchanged from here
+
+  // Ensure musicFiles has songs to play before attempting to play them
+  if (musicFiles.length > 0) {
+    let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
+
+    audioPlayer.volume = 0.05;
+
+    function playRandomSong() {
+      currentIndex = Math.floor(Math.random() * musicFiles.length);
+      playSongAtIndex(currentIndex);
+    }
+
+    function playSongAtIndex(index) {
+      const currentSong = musicFiles[index];
+      audioPlayer.src = currentSong;
+      audioPlayer.play();
+      sessionStorage.setItem('musicIndex', index.toString());
+    }
+
+    function pauseSong() {
+      audioPlayer.pause();
+    }
+
+    function playNextSong() {
+      currentIndex = (currentIndex + 1) % musicFiles.length;
+      playSongAtIndex(currentIndex);
+    }
+
+    function playPreviousSong() {
+      currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
+      playSongAtIndex(currentIndex);
+    }
+
+    let isRepeat = false; // Variable to toggle repeat status
+
+    function toggleRepeat() {
+      isRepeat = !isRepeat;
+    }
+
+    audioPlayer.addEventListener('ended', function () {
+      if (isRepeat) {
+        playSongAtIndex(currentIndex); // Repeat the current song if isRepeat is true
+      } else {
+        playNextSong();
+      }
+    });
+
+    playSongAtIndex(currentIndex);
+  }
+});
+
+</script>
+
       
     </div>
 
@@ -130,14 +137,22 @@
 
             <p>🎁 Wishing You a Merry and Bright Christmas! 🌟</p>
             `;
-
+            
             showDivButton.addEventListener("click", function () {
-                // Change the content dynamically
-                transparentDiv.innerHTML = aboutProjectText;
+    // Change the content dynamically
+    transparentDiv.innerHTML = aboutProjectText;
 
-                // Show the transparent div
-                transparentDiv.style.display = "block";
-            });
+    // Set the background to a linear gradient from light brown to yellow applied from left to right
+    transparentDiv.style.background = "linear-gradient(to right, #DDBB99, #FFFF00)";
+
+    // Apply CSS to make text transparent
+    transparentDiv.style.webkitBackgroundClip = "text";
+    transparentDiv.style.webkitTextFillColor = "transparent";
+
+    // Show the transparentDiv by changing its display property to 'block'
+    transparentDiv.style.display = "block";
+});
+
 
             transparentDiv.addEventListener("click", function () {
                 // Hide the transparent div

@@ -8,10 +8,11 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
         
         #quiz-container {
-            position: relative;
+            position: fixed;
             background-image: url(div.jpg);
             background-size: cover;
             background-position: center;
@@ -53,7 +54,7 @@
             border: none;
             border-radius: 15px;
             padding: 20px;
-            width: 70px;
+            width: 100px;
             align-items: center;
         }
         
@@ -140,3 +141,7 @@
         .snowflake::after {
             top: 5px;
         }
+#feedback-container {
+    word-wrap: break-word; /* Allow words to break and wrap onto the next line */
+    max-width: 200px;
+}
