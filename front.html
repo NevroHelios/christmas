@@ -42,10 +42,11 @@
         const audioPlayer = document.getElementById('audioPlayer');
         const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
         const musicFilesWithoutSound = []; // Define an empty array for music without sound
-    
+        const urlParams = new URLSearchParams(window.location.search);
+        const soundPreference = urlParams.get('sound');
         // Retrieve the user's sound preference from localStorage
-        const soundPreference = localStorage.getItem('soundPreference');
-    
+       
+        console.log(soundPreference)
         let musicFiles = []; // Initialize an empty array for music based on the user's preference
     
         // Set musicFiles based on the user's sound preference
