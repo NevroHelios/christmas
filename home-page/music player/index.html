@@ -13,6 +13,7 @@
     <button onclick="pauseSong()">PAUSE</button>
     <button onclick="playNextSong()">NEXT</button>
     <button onclick="playPreviousSong()">PREVIOUS</button>
+    <button onclick="toggleRepeat()">REPEAT</button>
     <div class="beat-container">
         <span class="stroke"></span>
         <span class="stroke"></span>
@@ -23,7 +24,7 @@
         <span class="stroke"></span>
         <span class="stroke"></span>
     </div>
-    <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()">
+    <audio id="audioPlayer" autoplay volume="0.2" onended="playNextSong()">
         Your browser does not support the audio element.
     </audio>
     <script src="script.js"></script>

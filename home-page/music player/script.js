@@ -10,6 +10,7 @@ const musicFiles = [
     'music/spotifydown.com - ただ声一つ.mp3'
 ];
 let currentIndex = 0; // Keep track of the current song index
+let isRepeat = false; // Track whether repeat is active
 
 // Function to play a random song
 function playRandomSong() {
@@ -31,14 +32,25 @@ function pauseSong() {
 
 // Function to play the next song
 function playNextSong() {
-    currentIndex = (currentIndex + 1) % musicFiles.length;
-    playSongAtIndex(currentIndex);
+    if (isRepeat) {
+        // If repeat is active, play the same song again
+        playSongAtIndex(currentIndex);
+    } else {
+        // Otherwise, play the next song
+        currentIndex = (currentIndex + 1) % musicFiles.length;
+        playSongAtIndex(currentIndex);
+    }
 }
 
 // Function to play the previous song
 function playPreviousSong() {
     currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
     playSongAtIndex(currentIndex);
+}
+
+// Function to toggle repeat status
+function toggleRepeat() {
+    isRepeat = !isRepeat;
 }
 
 // Event listener for the end of a song
