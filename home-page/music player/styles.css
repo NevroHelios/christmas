@@ -6,11 +6,16 @@
     
     body {
         display: flex;
-        min-height: 100vh;
+        /* min-height: 100vh; */
         align-items: center;
         justify-content: center;
-        background: linear-gradient(45deg, #0006ff, #a801ff);
+        /* background: linear-gradient(45deg, #0006ff, #a801ff); */
+        background-image: url("christmas-music.jpg");
         margin: 0;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
     }
     
     button {
@@ -29,6 +34,11 @@
         margin: 20px;
     }
     
+    button:hover {
+        background-color: rgb(21, 21, 100);
+        color: white;
+    }
+
     .beat-container {
         height: 200px;
         display: flex;
