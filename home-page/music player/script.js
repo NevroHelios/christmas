@@ -1,3 +1,5 @@
+
+
 const audioPlayer = document.getElementById('audioPlayer');
 const musicFiles = [
     'music/Last Christmas - Wham!.m4a',
@@ -28,6 +30,11 @@ function playSongAtIndex(index) {
 // Function to pause the currently playing song
 function pauseSong() {
     audioPlayer.pause();
+}
+
+// Function to resume the paused song
+function resumeSong() {
+    audioPlayer.play();
 }
 
 // Function to play the next song
