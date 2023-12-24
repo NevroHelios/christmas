@@ -46,5 +46,5 @@ This project was created and is maintained by [Your Name]. We would like to exte
 - Sayan Chatterjee
 - Debjit Kundu
 - Krishanu Biswas
-Support
+#### Support
 For any questions, issues, or feedback, please [mention how users can reach out or create issues on GitHub].
