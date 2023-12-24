@@ -578,6 +578,6 @@ function startTimer(durationInSeconds) {
 }
 
 
-// Initial display
+
 showQuestion(questions[currentQuestion]);
 startTimer(300);
