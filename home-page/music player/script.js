@@ -1,5 +1,4 @@
 
-
 const audioPlayer = document.getElementById('audioPlayer');
 const musicFiles = [
     'music/Last Christmas - Wham!.m4a',
