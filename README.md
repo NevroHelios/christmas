@@ -43,8 +43,8 @@ License
 Credits
 This project was created and is maintained by [Your Name]. We would like to extend our thanks to the following contributors:
 
-Sayan Chatterjee
-[Contributor 2]
-[Contributor 3]
+- Sayan Chatterjee
+- Debjit Kundu
+- Krishanu Biswas
 Support
 For any questions, issues, or feedback, please [mention how users can reach out or create issues on GitHub].
