@@ -44,11 +44,11 @@ function applyWeatherEffect(color) {
     switch (color) {
         case '#ff0000':
             createSnowfall();
-            playAudio('christmas/home-page/spinwheel/285311-Mountain_Wind-rushing_gusts_through_a_snowy_forest-snowfall.wav');
+            playAudio('285311-Mountain_Wind-rushing_gusts_through_a_snowy_forest-snowfall.wav');
             break;
         case '#00ff00':
             createDrizzle();
-            playAudio('christmas/home-page/spinwheel/150672-Weather_29-Rain_forest_downpour_heavy_steady_loop-SFX_Bible-2011.wav');
+            playAudio('150672-Weather_29-Rain_forest_downpour_heavy_steady_loop-SFX_Bible-2011.wav');
             break;
         case '#0000ff':
             createFog();
