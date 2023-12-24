@@ -88,7 +88,7 @@
     <link rel="stylesheet" href="countdown.css" />
     <link rel="stylesheet" href="FlyingSanta.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script defer>
       document.addEventListener("DOMContentLoaded", function () {
       const audioPlayer = document.getElementById('audioPlayer');
       const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
@@ -139,6 +139,8 @@
     </script>
   </head>
   <body>
+    <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()"></audio>
+
     <div class="snow-container"></div>
     <div id="fireworks-container"></div>
     <div id="snowflake-container"></div>
