@@ -35,7 +35,7 @@ function getTimeRemaining() {
   
 
       document.getElementById('countdown-clock').innerText = 'Merry Christmas!';
-      
+      document.getElementById('countdown-clock').style.background = 'linear-gradient(to right, red 0%, #faf9fc 100%);'
   }
   
   // Initial call to start the countdown
