@@ -9,18 +9,40 @@ const musicFiles = [
     'music/spotifydown.com - Snowman - Sped Up Version.mp3',
     'music/spotifydown.com - ただ声一つ.mp3'
 ];
+let currentIndex = 0; // Keep track of the current song index
 
 // Function to play a random song
 function playRandomSong() {
-    const randomIndex = Math.floor(Math.random() * musicFiles.length);
-    const randomSong = musicFiles[randomIndex];
+    currentIndex = Math.floor(Math.random() * musicFiles.length);
+    playSongAtIndex(currentIndex);
+}
 
-    audioPlayer.src = randomSong;
+// Function to play a song at a specific index
+function playSongAtIndex(index) {
+    const currentSong = musicFiles[index];
+    audioPlayer.src = currentSong;
     audioPlayer.play();
 }
 
+// Function to pause the currently playing song
+function pauseSong() {
+    audioPlayer.pause();
+}
+
+// Function to play the next song
+function playNextSong() {
+    currentIndex = (currentIndex + 1) % musicFiles.length;
+    playSongAtIndex(currentIndex);
+}
+
+// Function to play the previous song
+function playPreviousSong() {
+    currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
+    playSongAtIndex(currentIndex);
+}
+
 // Event listener for the end of a song
-audioPlayer.addEventListener('ended', playRandomSong);
+audioPlayer.addEventListener('ended', playNextSong);
 
 // Play the first song
 playRandomSong();

@@ -19,9 +19,9 @@
     }
     
     button {
-        position: fixed;
-        top: 10px;
-        right: 10px;
+        position: relative;
+        top: 20px; /* Adjusted value */
+        right: 20px; /* Adjusted value */
         font-family: 'Times New Roman', Times, serif;
         font-size: 16px;
         color: green;
@@ -29,10 +29,10 @@
         border: 2px solid white;
         border-radius: 7px;
         background-color: white;
-        /* Change to white */
         cursor: pointer;
         margin: 20px;
     }
+    
     
     button:hover {
         background-color: rgb(21, 21, 100);
