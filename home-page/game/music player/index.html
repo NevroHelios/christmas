@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button onclick="playRandomSong()">START</button>
+    <button onclick="pauseSong()">PAUSE</button>
+    <button onclick="playNextSong() ">NEXT</button>
+    <button onclick="playPreviousSong()">PREVIOUS</button>
+    <button onclick="resumeSong()">RESUME</button>
+    <button onclick="toggleRepeat()">REPEAT</button>
+    <div class="beat-container">
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+    </div>
+    <audio id="audioPlayer" autoplay volume=" 0.2 " onended="playRandomSong() ">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="script.js "></script>
+</body>
+
+</html>
