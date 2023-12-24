@@ -33,10 +33,9 @@ function getTimeRemaining() {
     document.getElementById('minutes').innerText = time.minutes;
     document.getElementById('seconds').innerText = time.seconds;
   
-    if (time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
-      clearInterval(timerInterval);
+
       document.getElementById('countdown-clock').innerText = 'Merry Christmas!';
-    }
+      
   }
   
   // Initial call to start the countdown
