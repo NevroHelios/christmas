@@ -34,49 +34,50 @@
         </section>
     </main>
 
-    <div>
-        <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()"></audio>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const audioPlayer = document.getElementById('audioPlayer');
-  const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
-  const musicFilesWithoutSound = []; // Define an empty array for music without sound
-
-  // Retrieve the user's sound preference from localStorage
-  const soundPreference = localStorage.getItem('soundPreference');
-
-  let musicFiles = []; // Initialize an empty array for music based on the user's preference
-
-  // Set musicFiles based on the user's sound preference
-  if (soundPreference === 'withSound') {
-    musicFiles = musicFilesWithSound;
-  } else {
-    musicFiles = musicFilesWithoutSound;
-  }
-
-  // Rest of your music player logic remains unchanged from here
-
-  // Ensure musicFiles has songs to play before attempting to play them
-  if (musicFiles.length > 0) {
-    let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
-
-    audioPlayer.volume = 0.03;
     
-    function playSongAtIndex(index) {
-      const currentSong = musicFiles[index];
-      audioPlayer.src = currentSong;
-      audioPlayer.play();
-      sessionStorage.setItem('musicIndex', index.toString());
-    }
+    <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()"></audio>
 
-
-    playSongAtIndex(currentIndex);
-  }
-});
-
-</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audioPlayer = document.getElementById('audioPlayer');
+        const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
+        const musicFilesWithoutSound = []; // Define an empty array for music without sound
+    
+        // Retrieve the user's sound preference from localStorage
+        const soundPreference = localStorage.getItem('soundPreference');
+    
+        let musicFiles = []; // Initialize an empty array for music based on the user's preference
+    
+        // Set musicFiles based on the user's sound preference
+        if (soundPreference === 'withSound') {
+          musicFiles = musicFilesWithSound;
+        } else {
+          musicFiles = musicFilesWithoutSound;
+        }
+    
+        // Ensure musicFiles has songs to play before attempting to play them
+        if (musicFiles.length > 0) {
+          let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
+    
+          audioPlayer.volume = 0.03;
+    
+          function playSongAtIndex(index) {
+            const currentSong = musicFiles[index];
+            audioPlayer.src = currentSong;
+            audioPlayer.play();
+            sessionStorage.setItem('musicIndex', index.toString());
+          }
+    
+          function playRandomSong() {
+            currentIndex = Math.floor(Math.random() * musicFiles.length);
+            playSongAtIndex(currentIndex);
+          }
+    
+          playSongAtIndex(currentIndex);
+        }
+      });
+    </script>
+    
 
       
     </div>
