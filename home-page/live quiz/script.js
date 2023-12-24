@@ -467,10 +467,10 @@ function checkAnswer(selectedOption) {
     seenQuestions++;
 
     if (selectedOption === questions[currentQuestion].correctAnswer) {
-        displayFeedback("Correct!", "green");
+        displayFeedback("CORRECT!", "green");
         score++; 
     } else {
-        displayFeedback("Incorrect!", "red");
+        displayFeedback("INCORRECT!", "red");
     }
 
     
@@ -486,7 +486,7 @@ function checkAnswer(selectedOption) {
         if (currentQuestion < questions.length) {
             showQuestion(questions[currentQuestion]);
         } else {
-            displayFeedback("Quiz completed!", "blue");
+            displayFeedback("QUIZ COMPLETED!", "blue");
         }
     }, 2000);
 }
@@ -545,19 +545,19 @@ document.addEventListener("DOMContentLoaded", function() {
         setInterval(moveSnowflake, updateInterval);
     }
 
-    // Create initial set of snowflakes
+    
     for (let i = 0; i < 50; i++) {
         createSnowflake();
     }
 
-    // Create additional snowflakes every 2 seconds
+    
     setInterval(createSnowflake, 2000);
 });
 
 
 function endQuiz() {
     clearInterval(timerInterval);
-    feedbackContainer.innerHTML = "Time finished ";
+    feedbackContainer.innerHTML = "TIME FINISHED";
     feedbackContainer.style.color = "dark-red";
     nextButton.disabled = true;
 }
