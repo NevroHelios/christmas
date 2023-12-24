@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Loading Bar Example</title>
+  <title>Diving Into</title>
   <style>
     /* Your CSS code here */
     @charset "utf-8";
@@ -124,6 +124,8 @@ html.dark body {
 </head>
 
 <body>
+  <audio id="backgroundAudio" src="./intro-aud/intro-load.mp3" autoplay volume="0.1"></audio>
+
   <!-- Your HTML content -->
   <div class="loading-bar" role="presentation" aria-hidden="true">
     <img longdesc="https://ys.mihoyo.com/main/">
@@ -143,6 +145,20 @@ html.dark body {
 
 
   <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const backgroundAudio = document.getElementById('backgroundAudio');
+  
+  // To play the audio
+  backgroundAudio.play();
+
+  // To pause the audio
+  // backgroundAudio.pause();
+
+  // To change volume dynamically
+  backgroundAudio.volume = 0.01; 
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Select both buttons

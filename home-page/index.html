@@ -88,7 +88,44 @@
     <link rel="stylesheet" href="countdown.css" />
     <link rel="stylesheet" href="FlyingSanta.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+      const audioPlayer = document.getElementById('audioPlayer');
+      const musicFilesWithSound = ['./music player/music/coc.mp3'];
+      const musicFilesWithoutSound = []; // Define an empty array for music without sound
+
+      // Retrieve the user's sound preference from localStorage
+      const soundPreference = localStorage.getItem('soundPreference');
+
+      let musicFiles = []; // Initialize an empty array for music based on the user's preference
+
+      // Set musicFiles based on the user's sound preference
+      if (soundPreference === 'withSound') {
+        musicFiles = musicFilesWithSound;
+      } else {
+        musicFiles = musicFilesWithoutSound;
+      }
+
+      // Rest of your music player logic remains unchanged from here
+
+      // Ensure musicFiles has songs to play before attempting to play them
+      if (musicFiles.length > 0) {
+        let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
+
+        audioPlayer.volume = 0.03;
+        
+        function playSongAtIndex(index) {
+          const currentSong = musicFiles[index];
+          audioPlayer.src = currentSong;
+          audioPlayer.play();
+          sessionStorage.setItem('musicIndex', index.toString());
+        }
+
+
+        playSongAtIndex(currentIndex);
+      }
+    });
+
       $$(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
         $(".parallax").each(function () {
@@ -102,6 +139,8 @@
     </script>
   </head>
   <body>
+    <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()"></audio>
+
     <div class="snow-container"></div>
     <div id="fireworks-container"></div>
     <div id="snowflake-container"></div>

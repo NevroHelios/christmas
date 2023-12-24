@@ -34,83 +34,53 @@
         </section>
     </main>
 
-    <div>
-        <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()">
-            Your browser does not support the audio element.
-        </audio>
+    
+    <audio id="audioPlayer" autoplay volume="0.2" onended="playRandomSong()"></audio>
 
-        <audio id="audioPlayer"></audio>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const audioPlayer = document.getElementById('audioPlayer');
-  const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
-  const musicFilesWithoutSound = []; // Define an empty array for music without sound
-
-  // Retrieve the user's sound preference from localStorage
-  const soundPreference = localStorage.getItem('soundPreference');
-
-  let musicFiles = []; // Initialize an empty array for music based on the user's preference
-
-  // Set musicFiles based on the user's sound preference
-  if (soundPreference === 'withSound') {
-    musicFiles = musicFilesWithSound;
-  } else {
-    musicFiles = musicFilesWithoutSound;
-  }
-
-  // Rest of your music player logic remains unchanged from here
-
-  // Ensure musicFiles has songs to play before attempting to play them
-  if (musicFiles.length > 0) {
-    let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
-
-    audioPlayer.volume = 0.05;
-
-    function playRandomSong() {
-      currentIndex = Math.floor(Math.random() * musicFiles.length);
-      playSongAtIndex(currentIndex);
-    }
-
-    function playSongAtIndex(index) {
-      const currentSong = musicFiles[index];
-      audioPlayer.src = currentSong;
-      audioPlayer.play();
-      sessionStorage.setItem('musicIndex', index.toString());
-    }
-
-    function pauseSong() {
-      audioPlayer.pause();
-    }
-
-    function playNextSong() {
-      currentIndex = (currentIndex + 1) % musicFiles.length;
-      playSongAtIndex(currentIndex);
-    }
-
-    function playPreviousSong() {
-      currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
-      playSongAtIndex(currentIndex);
-    }
-
-    let isRepeat = false; // Variable to toggle repeat status
-
-    function toggleRepeat() {
-      isRepeat = !isRepeat;
-    }
-
-    audioPlayer.addEventListener('ended', function () {
-      if (isRepeat) {
-        playSongAtIndex(currentIndex); // Repeat the current song if isRepeat is true
-      } else {
-        playNextSong();
-      }
-    });
-
-    playSongAtIndex(currentIndex);
-  }
-});
-
-</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audioPlayer = document.getElementById('audioPlayer');
+        const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
+        const musicFilesWithoutSound = []; // Define an empty array for music without sound
+    
+        // Retrieve the user's sound preference from localStorage
+        const soundPreference = localStorage.getItem('soundPreference');
+    
+        let musicFiles = []; // Initialize an empty array for music based on the user's preference
+    
+        // Set musicFiles based on the user's sound preference
+        if (soundPreference === 'withSound') {
+          musicFiles = musicFilesWithSound;
+          const currentSong = musicFiles[0];
+            audioPlayer.src = currentSong;
+            audioPlayer.play();
+        } else {
+          musicFiles = musicFilesWithoutSound;
+        }
+    
+        // Ensure musicFiles has songs to play before attempting to play them
+        // if (musicFiles.length > 0) {
+        //   let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
+    
+        //   audioPlayer.volume = 0.03;
+    
+        //   function playSongAtIndex(index) {
+        //     const currentSong = musicFiles[index];
+        //     audioPlayer.src = currentSong;
+        //     audioPlayer.play();
+        //     sessionStorage.setItem('musicIndex', index.toString());
+        //   }
+    
+        //   function playRandomSong() {
+        //     currentIndex = Math.floor(Math.random() * musicFiles.length);
+        //     playSongAtIndex(currentIndex);
+        //   }
+    
+        //   playSongAtIndex(currentIndex);
+        // }
+      });
+    </script>
+    
 
       
     </div>
