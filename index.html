@@ -130,14 +130,22 @@
 
             <p>🎁 Wishing You a Merry and Bright Christmas! 🌟</p>
             `;
-
+            
             showDivButton.addEventListener("click", function () {
-                // Change the content dynamically
-                transparentDiv.innerHTML = aboutProjectText;
+    // Change the content dynamically
+    transparentDiv.innerHTML = aboutProjectText;
 
-                // Show the transparent div
-                transparentDiv.style.display = "block";
-            });
+    // Set the background to a linear gradient from light brown to yellow applied from left to right
+    transparentDiv.style.background = "linear-gradient(to right, #DDBB99, #FFFF00)";
+
+    // Apply CSS to make text transparent
+    transparentDiv.style.webkitBackgroundClip = "text";
+    transparentDiv.style.webkitTextFillColor = "transparent";
+
+    // Show the transparentDiv by changing its display property to 'block'
+    transparentDiv.style.display = "block";
+});
+
 
             transparentDiv.addEventListener("click", function () {
                 // Hide the transparent div
