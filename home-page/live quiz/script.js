@@ -423,10 +423,9 @@ const questions = [{
         options: ["Panettone", "Tiramisu", "Cannoli", "Gelato"],
         correctAnswer: "Panettone"
     },
-    // Add more questions and answers here
+    
 ];
 
-// Add more questions and answers here
 
 
 let currentQuestion = 0;
@@ -469,18 +468,18 @@ function checkAnswer(selectedOption) {
 
     if (selectedOption === questions[currentQuestion].correctAnswer) {
         displayFeedback("Correct!", "green");
-        score++; // Increment the score for correct answers
+        score++; 
     } else {
         displayFeedback("Incorrect!", "red");
     }
 
-    // Update and display the score
+    
     scoreSpan.innerHTML = score;
     attemptedSpan.innerHTML = attemptedQuestions;
     totalSpan.innerHTML = seenQuestions;
 
 
-    // Delay the loading of the next question by 2 seconds
+    
     setTimeout(function() {
         currentQuestion++;
 
@@ -496,7 +495,7 @@ function displayFeedback(message, color) {
     feedbackContainer.innerHTML = message;
     feedbackContainer.style.color = color;
 
-    // Clear the feedback after a short delay (e.g., 2 seconds)
+    
     setTimeout(() => {
         feedbackContainer.innerHTML = "";
     }, 1000);
