@@ -41,74 +41,54 @@
 
         <audio id="audioPlayer"></audio>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const audioPlayer = document.getElementById('audioPlayer');
-  const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
-  const musicFilesWithoutSound = []; // Define an empty array for music without sound
+  document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const soundPreferenceFromURL = urlParams.get('sound');
 
   // Retrieve the user's sound preference from localStorage
-  const soundPreference = localStorage.getItem('soundPreference');
+  const soundPreferenceFromLocalStorage = localStorage.getItem('soundPreference');
 
-  let musicFiles = []; // Initialize an empty array for music based on the user's preference
+  let soundPreference;
 
-  // Set musicFiles based on the user's sound preference
-  if (soundPreference === 'withSound') {
-    musicFiles = musicFilesWithSound;
+  // Determine the sound preference based on priority (URL parameter > localStorage)
+  if (soundPreferenceFromURL === 'withSound' || soundPreferenceFromURL === 'withoutSound') {
+    soundPreference = soundPreferenceFromURL;
   } else {
-    musicFiles = musicFilesWithoutSound;
+    soundPreference = soundPreferenceFromLocalStorage;
   }
 
-  // Rest of your music player logic remains unchanged from here
+  if (soundPreference === 'withSound') {
+    console.log('User chose to continue with sound');
+    // Add logic here for playing music with sound
+    const audioPlayer = document.getElementById('audioPlayer');
+    const musicFilesWithSound = ['./home-page/music player/music/coc.mp3'];
+    let musicFiles = musicFilesWithSound; // Use musicFilesWithSound when sound is preferred
 
-  // Ensure musicFiles has songs to play before attempting to play them
-  if (musicFiles.length > 0) {
-    let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
+    // Ensure musicFiles has songs to play before attempting to play them
+    if (musicFiles.length > 0) {
+      let currentIndex = parseInt(sessionStorage.getItem('musicIndex')) || 0; // Initialize index if not found
 
-    audioPlayer.volume = 0.05;
+      audioPlayer.volume = 0.05;
 
-    function playRandomSong() {
-      currentIndex = Math.floor(Math.random() * musicFiles.length);
-      playSongAtIndex(currentIndex);
-    }
-
-    function playSongAtIndex(index) {
-      const currentSong = musicFiles[index];
-      audioPlayer.src = currentSong;
-      audioPlayer.play();
-      sessionStorage.setItem('musicIndex', index.toString());
-    }
-
-    function pauseSong() {
-      audioPlayer.pause();
-    }
-
-    function playNextSong() {
-      currentIndex = (currentIndex + 1) % musicFiles.length;
-      playSongAtIndex(currentIndex);
-    }
-
-    function playPreviousSong() {
-      currentIndex = (currentIndex - 1 + musicFiles.length) % musicFiles.length;
-      playSongAtIndex(currentIndex);
-    }
-
-    let isRepeat = false; // Variable to toggle repeat status
-
-    function toggleRepeat() {
-      isRepeat = !isRepeat;
-    }
-
-    audioPlayer.addEventListener('ended', function () {
-      if (isRepeat) {
-        playSongAtIndex(currentIndex); // Repeat the current song if isRepeat is true
-      } else {
-        playNextSong();
+      function playSongAtIndex(index) {
+        const currentSong = musicFiles[index];
+        audioPlayer.src = currentSong;
+        audioPlayer.play();
+        sessionStorage.setItem('musicIndex', index.toString());
       }
-    });
 
-    playSongAtIndex(currentIndex);
+      playSongAtIndex(currentIndex);
+    }
+  } else if (soundPreference === 'withoutSound') {
+    console.log('User chose to continue without sound');
+    // Add logic here for no sound
+    const musicFilesWithoutSound = []; // Define an empty array for music without sound
+    let musicFiles = musicFilesWithoutSound; // Use musicFilesWithoutSound when sound is not preferred
+
+    // Your logic when no sound is preferred
   }
 });
+
 
 </script>
 
